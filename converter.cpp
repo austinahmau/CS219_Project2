@@ -1,7 +1,14 @@
 #include "converter.h"
 
+//default constructor
 Converter::Converter(){}
 
+/*
+*	@brief converts a hex number into a binary number
+*
+*	@param std::string
+*	@return std::string
+*/
 std::string Converter::hexToBinary(std::string operand){
 	std::string binary;
 

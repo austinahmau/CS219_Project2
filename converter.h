@@ -9,6 +9,7 @@ private:
 	std::string operand;
 
 public:
+	//function definitions
 	Converter();
 	std::string hexToBinary(std::string operand);
 };
