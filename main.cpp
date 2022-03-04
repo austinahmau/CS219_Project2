@@ -73,21 +73,9 @@ int main(int argc, char *argv[]) {
 		}
 		//converts the first operand to an unsigned 32-bit number, takes the complement, and displays the answer as a hexidecimal number to the screen
 		else if(operations.at(i) == "NOT"){
-			std::string num1 = operands1.at(i);
-			Converter convert;
-			std::string binary = convert.hexToBinary(num1);
-			std::string notBinary = "";
-
-			for(int i = 0; i < binary.length(); i++){
-				if(binary[i] == '0'){
-					notBinary += "1";
-				}
-				else{
-					notBinary += "0";
-				}
-			}
-			uint32_t notNumber = std::stoul(notBinary, 0, 2);
-			std::cout << "NOT: ~" << operands1.at(i) << " = 0x" << notNumber << std::endl;
+			uint32_t num1 = std::stoul(operands1.at(i), 0, 16);
+			uint32_t notNum = ~num1;
+			std::cout << "NOT: ~" << operands1.at(i) << " = 0x" << notNum << std::endl;
 		}
 		//converts operands to unsigned 32-bit numbers, ANDs them, and displays the answer as a hexidecimal number to the screen
 		else if(operations.at(i) == "AND"){
